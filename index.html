@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conexia | Scientific Publishing Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <div>
+            <p class="brand-title">Conexia</p>
+            <p class="brand-subtitle">Scientific Publishing Workspace</p>
+          </div>
+        </div>
+        <nav class="top-actions">
+          <button class="ghost">Support</button>
+          <button class="ghost">Dashboard</button>
+          <button class="primary">New Submission</button>
+        </nav>
+      </header>
+
+      <div class="layout">
+        <aside class="sidebar">
+          <h2>Workspace</h2>
+          <ul>
+            <li class="active">Overview</li>
+            <li>Drafts</li>
+            <li>Peer Review</li>
+            <li>Publishings</li>
+            <li>Repositories</li>
+          </ul>
+
+          <div class="sidebar-card">
+            <h3>Quick Links</h3>
+            <a href="https://stackedit.io/" target="_blank" rel="noreferrer">
+              Open Free Text Editor
+            </a>
+            <a href="#upload">Upload an eBook</a>
+            <a href="#catalog">Browse Catalog</a>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Usage</h3>
+            <p>
+              Keep your scientific content organized with a clear workflow: draft →
+              review → publish.
+            </p>
+          </div>
+        </aside>
+
+        <main class="content">
+          <section class="hero">
+            <div>
+              <p class="pill">McGraw-Hill–style, simple & friendly</p>
+              <h1>
+                A welcoming hub for scientific books, journals, and learning
+                resources.
+              </h1>
+              <p class="hero-text">
+                Give researchers and students a clean space to publish, manage, and
+                access high-quality scientific materials.
+              </p>
+              <div class="hero-actions">
+                <button class="primary">Start a Draft</button>
+                <button class="ghost">Invite Reviewers</button>
+              </div>
+            </div>
+            <div class="hero-panel">
+              <h3>Publishing Snapshot</h3>
+              <div class="metric">
+                <span class="metric-label">Active Drafts</span>
+                <strong>12</strong>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Reviews Pending</span>
+                <strong>5</strong>
+              </div>
+              <div class="metric">
+                <span class="metric-label">eBooks Published</span>
+                <strong>27</strong>
+              </div>
+              <button class="secondary">View Analytics</button>
+            </div>
+          </section>
+
+          <section class="grid">
+            <article class="card">
+              <h3>Simple Publishing Flow</h3>
+              <p>
+                Create drafts, send them for peer review, and publish seamlessly—all
+                in one place.
+              </p>
+              <ul>
+                <li>Role-based access for researchers and editors.</li>
+                <li>Notifications for review updates.</li>
+                <li>Clean, accessible reading view.</li>
+              </ul>
+            </article>
+
+            <article class="card" id="upload">
+              <h3>Upload eBooks</h3>
+              <p>
+                Accept PDF or EPUB uploads with metadata for title, authors, and
+                discipline.
+              </p>
+              <form class="upload-form">
+                <label>
+                  eBook File
+                  <input type="file" />
+                </label>
+                <label>
+                  Title
+                  <input type="text" placeholder="Introduction to Quantum Theory" />
+                </label>
+                <label>
+                  Author(s)
+                  <input type="text" placeholder="Dr. A. Rivera" />
+                </label>
+                <button class="primary" type="button">Upload</button>
+              </form>
+            </article>
+
+            <article class="card">
+              <h3>Free Text Editor</h3>
+              <p>
+                Collaborate in a free writing tool before submitting to Conexia.
+              </p>
+              <div class="editor-link">
+                <span>StackEdit (free)</span>
+                <a href="https://stackedit.io/" target="_blank" rel="noreferrer">
+                  Launch Editor
+                </a>
+              </div>
+            </article>
+          </section>
+
+          <section class="catalog" id="catalog">
+            <div class="catalog-header">
+              <div>
+                <h2>Latest Scientific Titles</h2>
+                <p>Preview a curated set of recently published eBooks.</p>
+              </div>
+              <button class="secondary">See Full Library</button>
+            </div>
+            <div class="catalog-grid">
+              <article class="catalog-card">
+                <h4>Neuroscience Essentials</h4>
+                <p>Dr. L. Morgan</p>
+                <span>Neuroscience</span>
+              </article>
+              <article class="catalog-card">
+                <h4>Climate Data Atlas</h4>
+                <p>Prof. K. Ibarra</p>
+                <span>Earth Science</span>
+              </article>
+              <article class="catalog-card">
+                <h4>Applied Biostatistics</h4>
+                <p>R. Chen</p>
+                <span>Biostatistics</span>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
