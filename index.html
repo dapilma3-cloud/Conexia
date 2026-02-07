@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conexia | Scientific Articles & Ebooks</title>
+  <title>ScienceHub | Scientific Articles & Ebooks</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,158 +12,94 @@
 <body>
   <header class="site-header">
     <nav class="navbar">
-      <div class="logo">Conexia</div>
+      <div class="logo">ScienceHub</div>
       <div class="nav-links">
         <a class="active" href="index.html">Home</a>
         <a href="write.html">Write Article</a>
         <a href="upload.html">Upload Ebook</a>
-        <a href="join.html">Join Conexia</a>
       </div>
-      <a class="nav-cta" href="join.html">Start Publishing</a>
+      <button class="nav-cta" data-action="open-upload">Share Research</button>
     </nav>
   </header>
 
   <main>
     <section class="hero">
       <div class="hero-content">
-        <p class="hero-tag">Scientific publishing made simple</p>
-        <h1>Discover, publish, and share research with clarity.</h1>
+        <p class="hero-tag">Science made accessible</p>
+        <h1>Publish, explore, and connect with leading research.</h1>
         <p class="hero-subtitle">
-          Search peer-reviewed articles, feature upcoming work, and distribute ebooks with a
-          professional, reader-friendly experience.
+          ScienceHub helps researchers publish articles and ebooks while giving readers a clean,
+          searchable library built for discovery.
         </p>
         <div class="search-bar">
-          <input type="text" placeholder="Search articles, authors, or keywords" />
-          <button>Search</button>
+          <input id="searchInput" type="text" placeholder="Search articles, ebooks, authors, or keywords" />
+          <button type="button">Search</button>
         </div>
         <div class="hero-stats">
           <div>
-            <h3>2,400+</h3>
-            <span>Articles hosted</span>
+            <h3 id="articleCount">0</h3>
+            <span>Articles indexed</span>
           </div>
           <div>
-            <h3>780</h3>
-            <span>Ebooks indexed</span>
+            <h3 id="ebookCount">0</h3>
+            <span>Ebooks cataloged</span>
           </div>
           <div>
-            <h3>96</h3>
-            <span>Partner institutions</span>
+            <h3>120+</h3>
+            <span>Editorial partners</span>
           </div>
         </div>
       </div>
       <div class="hero-panel">
         <div class="panel-card">
-          <h4>Featured Topic</h4>
-          <p>Advances in Sustainable Energy Systems</p>
-          <button>Explore</button>
+          <h4>Trending Collection</h4>
+          <p>Climate resilience, health equity, and ethical AI research.</p>
+          <button type="button" data-action="scroll-articles">Explore Articles</button>
         </div>
         <div class="panel-card outline">
-          <h4>Editorial Focus</h4>
-          <p>Clear writing, strong data, and global collaboration.</p>
-          <button>Learn More</button>
+          <h4>Publishing Support</h4>
+          <p>Editorial guidance, DOI management, and peer review workflows.</p>
+          <button type="button" data-action="scroll-ebooks">Browse Ebooks</button>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="articles">
       <div class="section-header">
         <div>
           <h2>Latest Articles</h2>
-          <p>Curated insights from our publishing network.</p>
+          <p>Fresh insights from global researchers.</p>
         </div>
-        <button class="ghost">View All</button>
+        <button class="ghost" type="button">View All</button>
       </div>
-      <div class="card-grid">
-        <article class="article-card">
-          <div>
-            <h3>Microfluidic Approaches to Rapid Diagnostics</h3>
-            <p class="meta">Dr. Amina Patel · Biomedical Engineering</p>
-            <p class="abstract">
-              This study explores low-cost microfluidic devices designed to accelerate point-of-care
-              diagnostics while reducing sample volume requirements.
-            </p>
-          </div>
-          <button>Read</button>
-        </article>
-        <article class="article-card">
-          <div>
-            <h3>Resilient Crop Modeling for Arid Regions</h3>
-            <p class="meta">Prof. Miguel Santos · Environmental Science</p>
-            <p class="abstract">
-              We analyze predictive models that inform crop selection and irrigation strategies in
-              drought-prone agricultural zones.
-            </p>
-          </div>
-          <button>Read</button>
-        </article>
-        <article class="article-card">
-          <div>
-            <h3>Machine Ethics in Autonomous Systems</h3>
-            <p class="meta">Dr. Lena Okafor · Computer Science</p>
-            <p class="abstract">
-              An interdisciplinary review of ethical frameworks that guide decision-making algorithms
-              in autonomous transportation and robotics.
-            </p>
-          </div>
-          <button>Read</button>
-        </article>
-      </div>
+      <div class="card-grid" id="articleGrid"></div>
     </section>
 
-    <section class="section alt">
+    <section class="section alt" id="ebooks">
       <div class="section-header">
         <div>
           <h2>Featured Ebooks</h2>
-          <p>Download or read long-form research collections.</p>
+          <p>Download or read full-length research collections.</p>
         </div>
-        <button class="ghost">Browse Library</button>
+        <button class="ghost" type="button">Browse Library</button>
       </div>
-      <div class="ebook-grid">
-        <div class="ebook-card">
-          <div class="ebook-cover">
-            <span>Neuroscience</span>
-          </div>
-          <div class="ebook-info">
-            <h3>Neural Pathways & Modern Therapies</h3>
-            <p class="meta">Dr. Hannah Reid</p>
-            <div class="ebook-actions">
-              <button>Download</button>
-              <button class="secondary">Read Online</button>
-            </div>
-          </div>
-        </div>
-        <div class="ebook-card">
-          <div class="ebook-cover teal">
-            <span>Data Science</span>
-          </div>
-          <div class="ebook-info">
-            <h3>Practical AI for Climate Research</h3>
-            <p class="meta">Prof. Jae Kim</p>
-            <div class="ebook-actions">
-              <button>Download</button>
-              <button class="secondary">Read Online</button>
-            </div>
-          </div>
-        </div>
-        <div class="ebook-card">
-          <div class="ebook-cover violet">
-            <span>Physics</span>
-          </div>
-          <div class="ebook-info">
-            <h3>Quantum Materials in the Wild</h3>
-            <p class="meta">Dr. Elise Moreno</p>
-            <div class="ebook-actions">
-              <button>Download</button>
-              <button class="secondary">Read Online</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="ebook-grid" id="ebookGrid"></div>
     </section>
   </main>
 
+  <div class="modal" id="articleModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" type="button" aria-label="Close modal">×</button>
+      <h3 id="modalTitle">Article</h3>
+      <p class="meta" id="modalAuthor"></p>
+      <p id="modalAbstract"></p>
+    </div>
+  </div>
+
   <footer class="site-footer">
-    <p>© 2024 Conexia Publishing. Empowering the next generation of research.</p>
+    <p>© 2024 ScienceHub. Empowering open scientific publishing.</p>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>

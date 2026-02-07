@@ -9,6 +9,7 @@
   --gray-100: #f5f7fb;
   --white: #ffffff;
   --shadow: 0 20px 40px rgba(12, 35, 64, 0.08);
+  --shadow-hover: 0 22px 45px rgba(12, 35, 64, 0.16);
 }
 
 * {
@@ -27,6 +28,10 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  font-family: inherit;
 }
 
 .site-header {
@@ -79,6 +84,11 @@ a {
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-cta:active {
+  transform: scale(0.98);
 }
 
 main {
@@ -121,7 +131,7 @@ main {
   box-shadow: var(--shadow);
   overflow: hidden;
   border: 1px solid var(--gray-100);
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .search-bar input {
@@ -168,6 +178,12 @@ main {
   border-radius: 20px;
   background: var(--blue-100);
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
 .panel-card.outline {
@@ -242,6 +258,12 @@ main {
   justify-content: space-between;
   gap: 20px;
   min-height: 260px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
 }
 
 .article-card h3 {
@@ -270,6 +292,14 @@ main {
   border-radius: 999px;
   cursor: pointer;
   font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-card button:hover,
+.ebook-actions button:hover,
+.form-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .ebook-grid {
@@ -286,6 +316,12 @@ main {
   padding: 20px;
   align-items: center;
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ebook-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
 }
 
 .ebook-cover {
@@ -300,14 +336,13 @@ main {
   text-align: center;
   font-weight: 600;
   padding: 10px;
+  overflow: hidden;
 }
 
-.ebook-cover.teal {
-  background: linear-gradient(135deg, #3c9d9b, #74c9c6);
-}
-
-.ebook-cover.violet {
-  background: linear-gradient(135deg, #7b6cff, #b4a7ff);
+.ebook-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .ebook-info h3 {
@@ -384,6 +419,13 @@ textarea {
   gap: 12px;
   margin-top: 24px;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.status {
+  margin-right: auto;
+  color: var(--gray-600);
+  font-size: 0.9rem;
 }
 
 .upload-panels {
@@ -401,17 +443,16 @@ textarea {
   gap: 12px;
 }
 
-.checkbox-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--gray-600);
-  font-weight: 500;
+.cover-preview {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: none;
 }
 
-.checkbox-row input {
-  width: 16px;
-  height: 16px;
+.cover-preview.visible {
+  display: block;
 }
 
 .upload-card input[type="file"] {
@@ -421,6 +462,47 @@ textarea {
 
 .upload-card input::file-selector-button {
   margin-right: 12px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 32, 54, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 28px;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: var(--gray-100);
+  color: var(--gray-900);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .site-footer {
@@ -447,5 +529,10 @@ textarea {
 
   .section.alt {
     padding: 32px 24px;
+  }
+
+  .ebook-card {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
