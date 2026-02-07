@@ -401,6 +401,19 @@ textarea {
   gap: 12px;
 }
 
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.checkbox-row input {
+  width: 16px;
+  height: 16px;
+}
+
 .upload-card input[type="file"] {
   border: none;
   padding: 0;
