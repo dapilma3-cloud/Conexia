@@ -505,6 +505,15 @@ textarea {
   cursor: pointer;
 }
 
+.empty-state {
+  background: var(--white);
+  border: 1px dashed var(--gray-300);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  color: var(--gray-600);
+}
+
 .site-footer {
   text-align: center;
   padding: 30px 24px 40px;

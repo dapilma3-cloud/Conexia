@@ -3,59 +3,7 @@ const state = {
   ebooks: [],
 };
 
-const fallbackArticles = [
-  {
-    id: 1,
-    title: "Microfluidic Approaches to Rapid Diagnostics",
-    author: "Dr. Amina Patel",
-    subject: "Biomedical Engineering",
-    abstract:
-      "This study explores low-cost microfluidic devices designed to accelerate point-of-care diagnostics while reducing sample volume requirements.",
-  },
-  {
-    id: 2,
-    title: "Resilient Crop Modeling for Arid Regions",
-    author: "Prof. Miguel Santos",
-    subject: "Environmental Science",
-    abstract:
-      "We analyze predictive models that inform crop selection and irrigation strategies in drought-prone agricultural zones.",
-  },
-  {
-    id: 3,
-    title: "Machine Ethics in Autonomous Systems",
-    author: "Dr. Lena Okafor",
-    subject: "Computer Science",
-    abstract:
-      "An interdisciplinary review of ethical frameworks that guide decision-making algorithms in autonomous transportation and robotics.",
-  },
-];
-
-const fallbackEbooks = [
-  {
-    id: 101,
-    title: "Neural Pathways & Modern Therapies",
-    author: "Dr. Hannah Reid",
-    coverUrl: "",
-    downloadUrl: "",
-    readUrl: "",
-  },
-  {
-    id: 102,
-    title: "Practical AI for Climate Research",
-    author: "Prof. Jae Kim",
-    coverUrl: "",
-    downloadUrl: "",
-    readUrl: "",
-  },
-  {
-    id: 103,
-    title: "Quantum Materials in the Wild",
-    author: "Dr. Elise Moreno",
-    coverUrl: "",
-    downloadUrl: "",
-    readUrl: "",
-  },
-];
+const emptyMessage = (message) => `<div class="empty-state">${message}</div>`;
 
 const selectors = {
   articleGrid: document.getElementById("articleGrid"),
@@ -121,8 +69,22 @@ const renderCards = (articles, ebooks) => {
   if (!selectors.articleGrid || !selectors.ebookGrid) return;
   selectors.articleGrid.innerHTML = "";
   selectors.ebookGrid.innerHTML = "";
-  articles.forEach((article) => selectors.articleGrid.appendChild(createArticleCard(article)));
-  ebooks.forEach((ebook) => selectors.ebookGrid.appendChild(createEbookCard(ebook)));
+
+  if (articles.length === 0) {
+    selectors.articleGrid.innerHTML = emptyMessage(
+      "No articles available yet. Connect your backend to load published research."
+    );
+  } else {
+    articles.forEach((article) => selectors.articleGrid.appendChild(createArticleCard(article)));
+  }
+
+  if (ebooks.length === 0) {
+    selectors.ebookGrid.innerHTML = emptyMessage(
+      "No ebooks available yet. Published ebooks will appear here once connected."
+    );
+  } else {
+    ebooks.forEach((ebook) => selectors.ebookGrid.appendChild(createEbookCard(ebook)));
+  }
 };
 
 const applySearchFilter = () => {
@@ -187,13 +149,13 @@ const fetchContent = async () => {
       fetch("/api/articles"),
       fetch("/api/ebooks"),
     ]);
-    const articles = articlesResponse.ok ? await articlesResponse.json() : fallbackArticles;
-    const ebooks = ebooksResponse.ok ? await ebooksResponse.json() : fallbackEbooks;
-    state.articles = Array.isArray(articles) ? articles : fallbackArticles;
-    state.ebooks = Array.isArray(ebooks) ? ebooks : fallbackEbooks;
+    const articles = articlesResponse.ok ? await articlesResponse.json() : [];
+    const ebooks = ebooksResponse.ok ? await ebooksResponse.json() : [];
+    state.articles = Array.isArray(articles) ? articles : [];
+    state.ebooks = Array.isArray(ebooks) ? ebooks : [];
   } catch (error) {
-    state.articles = fallbackArticles;
-    state.ebooks = fallbackEbooks;
+    state.articles = [];
+    state.ebooks = [];
   }
 
   setCounts();
