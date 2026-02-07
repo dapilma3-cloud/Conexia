@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Ebook | Conexia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">Conexia</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="write.html">Write Article</a>
+        <a class="active" href="upload.html">Upload Ebook</a>
+      </div>
+      <button class="nav-cta">Upload</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <h1>Upload an Ebook</h1>
+        <p>Share full-length research collections, whitepapers, or textbook chapters.</p>
+      </div>
+      <button class="ghost">Ebook Standards</button>
+    </section>
+
+    <section class="section">
+      <form class="upload-form">
+        <div class="form-grid">
+          <label>
+            Ebook Title
+            <input type="text" placeholder="Enter ebook title" />
+          </label>
+          <label>
+            Author / Editor
+            <input type="text" placeholder="Add author or editor name" />
+          </label>
+          <label>
+            ISBN (optional)
+            <input type="text" placeholder="ISBN" />
+          </label>
+          <label>
+            Category
+            <input type="text" placeholder="e.g., Life Sciences" />
+          </label>
+        </div>
+
+        <div class="upload-panels">
+          <div class="upload-card">
+            <h3>Cover Image</h3>
+            <p>Upload a high-resolution JPEG or PNG.</p>
+            <input type="file" accept="image/*" />
+          </div>
+          <div class="upload-card">
+            <h3>Ebook File</h3>
+            <p>Supported formats: PDF, ePub, MOBI.</p>
+            <input type="file" accept=".pdf,.epub,.mobi" />
+          </div>
+          <div class="upload-card">
+            <h3>Abstract / Description</h3>
+            <textarea rows="6" placeholder="Provide a concise ebook summary..."></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="secondary">Save Draft</button>
+          <button type="submit">Submit Ebook</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Need a hand? Contact ebooks@conexia.org for onboarding support.</p>
+  </footer>
+</body>
+</html>

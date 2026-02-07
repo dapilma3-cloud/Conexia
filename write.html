@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Write Article | Conexia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">Conexia</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="write.html">Write Article</a>
+        <a href="upload.html">Upload Ebook</a>
+      </div>
+      <button class="nav-cta">Submit Draft</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <h1>Write a New Article</h1>
+        <p>Draft, format, and submit your latest research directly to Conexia.</p>
+      </div>
+      <button class="ghost">View Guidelines</button>
+    </section>
+
+    <section class="section">
+      <form class="editor-form">
+        <div class="form-grid">
+          <label>
+            Article Title
+            <input type="text" placeholder="Enter a clear, descriptive title" />
+          </label>
+          <label>
+            Primary Author
+            <input type="text" placeholder="Add lead author name" />
+          </label>
+          <label>
+            Research Area
+            <input type="text" placeholder="e.g., Neuroscience, AI, Climate" />
+          </label>
+          <label>
+            Keywords
+            <input type="text" placeholder="Add comma-separated keywords" />
+          </label>
+        </div>
+        <div class="editor-section">
+          <h3>Manuscript Editor</h3>
+          <div id="editor"></div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="secondary">Save Draft</button>
+          <button type="submit">Submit for Review</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Need assistance? Email editor@conexia.org for editorial support.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+  <script>
+    const quill = new Quill("#editor", {
+      theme: "snow",
+      placeholder: "Compose your article...",
+      modules: {
+        toolbar: [
+          [{ header: [1, 2, 3, false] }],
+          ["bold", "italic", "underline"],
+          [{ list: "ordered" }, { list: "bullet" }],
+          ["link", "blockquote"],
+          ["clean"],
+        ],
+      },
+    });
+  </script>
+</body>
+</html>
