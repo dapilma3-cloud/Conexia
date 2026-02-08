@@ -19,6 +19,17 @@ const selectors = {
 
 const isHomePage = Boolean(selectors.articleGrid && selectors.ebookGrid);
 
+const isValidArticle = (article) =>
+  Boolean(article && article.title && article.author && article.abstract);
+
+const isValidEbook = (ebook) =>
+  Boolean(
+    ebook &&
+      ebook.title &&
+      ebook.author &&
+      (ebook.downloadUrl || ebook.readUrl || ebook.coverUrl)
+  );
+
 const setCounts = () => {
   if (!selectors.articleCount || !selectors.ebookCount) return;
   selectors.articleCount.textContent = state.articles.length.toString();
@@ -151,8 +162,8 @@ const fetchContent = async () => {
     ]);
     const articles = articlesResponse.ok ? await articlesResponse.json() : [];
     const ebooks = ebooksResponse.ok ? await ebooksResponse.json() : [];
-    state.articles = Array.isArray(articles) ? articles : [];
-    state.ebooks = Array.isArray(ebooks) ? ebooks : [];
+    state.articles = Array.isArray(articles) ? articles.filter(isValidArticle) : [];
+    state.ebooks = Array.isArray(ebooks) ? ebooks.filter(isValidEbook) : [];
   } catch (error) {
     state.articles = [];
     state.ebooks = [];
