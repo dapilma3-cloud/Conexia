@@ -1,0 +1,26 @@
+.page-hero {
+  background: linear-gradient(135deg, rgba(45, 95, 169, 0.12), rgba(255, 255, 255, 0.92));
+}
+
+.upload-form {
+  box-shadow: 0 18px 40px rgba(16, 32, 54, 0.08);
+}
+
+.upload-card {
+  border: 1px solid #e2e8f4;
+}
+
+.upload-card h3 {
+  color: #123a6f;
+}
+
+.cover-preview {
+  border: 1px dashed #c7d3e5;
+  background: #f5f7fb;
+}
+
+@media (max-width: 768px) {
+  .upload-form {
+    padding: 24px;
+  }
+}

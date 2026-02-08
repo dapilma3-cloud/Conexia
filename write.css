@@ -1,0 +1,31 @@
+.page-hero {
+  background: linear-gradient(135deg, rgba(74, 130, 216, 0.15), rgba(255, 255, 255, 0.9));
+}
+
+.editor-form {
+  box-shadow: 0 18px 40px rgba(16, 32, 54, 0.08);
+}
+
+.editor-section {
+  background: #ffffff;
+  border: 1px solid #e1e8f5;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+#editor {
+  border-radius: 12px;
+}
+
+#editor .ql-toolbar {
+  border-radius: 12px 12px 0 0;
+}
+
+#editor .ql-container {
+  border-radius: 0 0 12px 12px;
+  min-height: 260px;
+}
+
+.form-actions .status {
+  font-weight: 500;
+}

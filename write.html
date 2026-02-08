@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Write Article | ScienceHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="write.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">ScienceHub</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="write.html">Write Article</a>
+        <a href="upload.html">Upload Ebook</a>
+      </div>
+      <button class="nav-cta" type="button" data-action="publish">Publish</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <h1>Write a New Article</h1>
+        <p>Draft, format, and publish your latest research directly to ScienceHub.</p>
+      </div>
+      <button class="ghost" type="button">Author Guidelines</button>
+    </section>
+
+    <section class="section">
+      <form class="editor-form" id="articleForm">
+        <div class="form-grid">
+          <label>
+            Article Title
+            <input type="text" name="title" placeholder="Enter a clear, descriptive title" required />
+          </label>
+          <label>
+            Author
+            <input type="text" name="author" placeholder="Add lead author name" required />
+          </label>
+          <label>
+            Subject Area
+            <input type="text" name="subject" placeholder="e.g., Neuroscience, AI, Climate" required />
+          </label>
+          <label>
+            Abstract Summary
+            <input type="text" name="abstract" placeholder="Short abstract summary" required />
+          </label>
+        </div>
+        <div class="editor-section">
+          <h3>Manuscript Editor</h3>
+          <div id="editor"></div>
+        </div>
+        <div class="form-actions">
+          <span class="status" id="articleStatus">Ready to publish.</span>
+          <button type="button" class="secondary" id="saveDraft">Save Draft</button>
+          <button type="submit">Publish Article</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Need assistance? Email editor@sciencehub.org for editorial support.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
