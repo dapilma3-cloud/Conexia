@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScienceHub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">
+          <span class="logo-ring"></span>
+          <span class="logo-dot"></span>
+          <span class="logo-atom"></span>
+        </div>
+        <span class="brand-name">ScienceHub</span>
+      </div>
+      <nav class="main-nav">
+        <button class="nav-link is-active" data-nav="Home">Home</button>
+        <button class="nav-link" data-nav="Articles">Articles</button>
+        <button class="nav-link" data-nav="Ebooks">Ebooks</button>
+        <button class="nav-link" data-nav="Library">My Library</button>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-primary">Write Article</button>
+        <button class="btn btn-outline">Log In</button>
+        <span class="profile-dot"></span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="search-bar">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search articles, ebooks, authors..."
+          aria-label="Search"
+        />
+        <button id="searchButton" class="btn btn-primary">
+          <span>Search</span>
+          <span class="icon">&#128269;</span>
+        </button>
+      </div>
+      <p class="search-hint" id="searchHint">Try “quantum computing” or “genomics”.</p>
+    </section>
+
+    <main class="content">
+      <section class="left-column">
+        <div class="section-header">
+          <h2>Featured Articles</h2>
+          <span class="rule"></span>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <div class="thumb thumb-stars"></div>
+            <div class="card-body">
+              <h3>Advances in Quantum Computing</h3>
+              <p>Dr. Emily Carter</p>
+              <span class="pill">Physics</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb thumb-forest"></div>
+            <div class="card-body">
+              <h3>Genomics and Evolutionary Biology</h3>
+              <p>Prof. Mark Jensen</p>
+              <span class="pill">Biology</span>
+            </div>
+          </article>
+          <article class="card wide">
+            <div class="thumb thumb-robot"></div>
+            <div class="card-body">
+              <h3>Nanomaterials in Medicine</h3>
+              <p>Dr. Susan Lee</p>
+              <span class="pill">Chemistry</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-header">
+          <h2>Latest Publications</h2>
+          <span class="rule"></span>
+          <a class="link" href="#">More &rsaquo;</a>
+        </div>
+        <div class="list">
+          <div class="list-item">
+            <span class="bullet"></span>
+            <span>AI in Scientific Research</span>
+          </div>
+          <div class="list-item">
+            <span class="bullet"></span>
+            <span>Climate Change Impacts on Oceans</span>
+          </div>
+          <div class="list-item">
+            <span class="bullet"></span>
+            <span>Renewable Energy Technologies</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right-column">
+        <div class="section-header">
+          <h2>Popular Ebooks</h2>
+          <span class="rule"></span>
+        </div>
+        <div class="ebook-card">
+          <div class="thumb thumb-galaxy"></div>
+          <div class="card-body">
+            <h3>Astrophysics Essentials</h3>
+            <div class="actions">
+              <button class="btn btn-primary">Download</button>
+              <button class="btn btn-outline">Read Online</button>
+            </div>
+          </div>
+        </div>
+        <div class="ebook-card">
+          <div class="thumb thumb-cells"></div>
+          <div class="card-body">
+            <h3>Principles of Microbiology</h3>
+            <div class="actions">
+              <button class="btn btn-primary">Download</button>
+              <button class="btn btn-outline">Read Online</button>
+            </div>
+          </div>
+        </div>
+        <div class="ebook-card">
+          <div class="thumb thumb-dna"></div>
+          <div class="card-body">
+            <h3>Introduction to Genetics</h3>
+            <div class="actions">
+              <button class="btn btn-primary">Download</button>
+              <button class="btn btn-outline">Read Online</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section class="browse">
+      <div class="section-header">
+        <h2>Browse by Subject</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="subject-grid">
+        <button class="subject">
+          <span class="subject-icon">&#9883;</span>
+          <span>Physics</span>
+        </button>
+        <button class="subject">
+          <span class="subject-icon">&#129516;</span>
+          <span>Biology</span>
+        </button>
+        <button class="subject">
+          <span class="subject-icon">&#9879;</span>
+          <span>Chemistry</span>
+        </button>
+        <button class="subject">
+          <span class="subject-icon">&#127811;</span>
+          <span>Environmental Science</span>
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
